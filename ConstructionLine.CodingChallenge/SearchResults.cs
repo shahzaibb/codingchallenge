@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ConstructionLine.CodingChallenge
 {
@@ -11,6 +12,13 @@ namespace ConstructionLine.CodingChallenge
 
 
         public List<ColorCount> ColorCounts { get; set; }
+
+        public SearchResults()
+        {
+            Shirts = new List<Shirt>();
+            SizeCounts = Size.All.Select(x => new SizeCount { Size = x, Count = 0 }).ToList();
+            ColorCounts = Color.All.Select(x => new ColorCount { Color = x, Count = 0 }).ToList();
+        }
     }
 
 
